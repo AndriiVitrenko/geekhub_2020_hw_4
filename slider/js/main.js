@@ -18,7 +18,7 @@ $(window).ready( function() {
 
     slider__track.style.width = slidesAmount * parseFloat(slider__items[0].style.width) + 'px'
 
-    $(`.dots__item:nth-child(${currentSlide})`).addClass('active')
+    $(`.dots__item:nth-child(${currentSlide})`).addClass('active') 
 
     firstSlideClone.style.backgroundImage = slider__items[0].style.backgroundImage
     firstSlideClone.style.width = slider__items[0].style.width
