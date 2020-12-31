@@ -132,8 +132,8 @@ function showSlide(index) {
 
 
 function getTranslateX() {
-  var style = window.getComputedStyle(slider__track);
-  var matrix = new WebKitCSSMatrix(style.transform);
+  let style = window.getComputedStyle(slider__track);
+  let matrix = new WebKitCSSMatrix(style.transform);
   return matrix.m41;
 }
 
