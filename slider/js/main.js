@@ -7,8 +7,6 @@ const slider__items = document.querySelectorAll('.slider__item')
 $(window).ready( function() {
     slidesArray = $('.slider__item')
     slidesAmount = slidesArray.length;
-    let firstSlideClone = slider__items[0].cloneNode(true)
-    let lastSlideClone = slider__items[slider__items.length - 1].cloneNode(true)
     
     for (let i = 1; i <= slidesAmount; i++) {
         $('.dots').append(`<button id=${i} class="dots__item" onclick="showSlide(${i})">${i}</button>`)
@@ -20,11 +18,8 @@ $(window).ready( function() {
 
     $(`.dots__item:nth-child(${currentSlide})`).addClass('active') 
 
-    firstSlideClone.style.backgroundImage = slider__items[0].style.backgroundImage
-    firstSlideClone.style.width = slider__items[0].style.width
-
-    lastSlideClone.style.backgroundImage = slider__items[slider__items.length - 1].style.backgroundImage
-    lastSlideClone.style.width = slider__items[slider__items.length - 1].style.width
+    const firstSlideClone = slider__items[0].cloneNode(true)
+    const lastSlideClone = slider__items[slider__items.length - 1].cloneNode(true)
 
     slider__track.insertAdjacentElement('beforeend', firstSlideClone)
     slider__track.insertAdjacentElement('afterbegin', lastSlideClone)
